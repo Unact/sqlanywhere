@@ -4,3 +4,6 @@ ext/*.so
 ext/Makefile
 lib/*
 *.gem
+.DS_Store
+/tmp
+*.bundle
