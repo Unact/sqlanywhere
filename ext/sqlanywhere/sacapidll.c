@@ -35,19 +35,13 @@
     #else
 	#define LIB_EXT "so"
     #endif
-    #if defined( _REENTRANT ) || defined( _THREAD_SAFE ) \
-	|| defined( __USE_REENTRANT )
-    /* if building a thread-safe library, we need to load 
-       the thread-safe dbcapi library */
+    /* Always build thread-safe library */
 	#define DEFAULT_LIBRARY_NAME "libdbcapi_r." LIB_EXT
-    #else
-	#define DEFAULT_LIBRARY_NAME "libdbcapi." LIB_EXT
-    #endif
 #endif
 
 #include "sacapidll.h"
 
-static 
+static
 void * loadLibrary( const char * name )
 /*************************************/
 {
@@ -60,7 +54,7 @@ void * loadLibrary( const char * name )
     return handle;
 }
 
-static 
+static
 void unloadLibrary( void * handle )
 /**********************************/
 {
@@ -71,7 +65,7 @@ void unloadLibrary( void * handle )
 #endif
 }
 
-static 
+static
 void * findSymbol( void * dll_handle, char * name )
 /**************************************************/
 {
@@ -91,7 +85,7 @@ void * findSymbol( void * dll_handle, char * name )
 	    unloadLibrary( api->dll_handle );				\
 	    return 0;							\
 	}
-	
+
 int sqlany_initialize_interface( SQLAnywhereInterface * api, const char * path )
 /*******************************************************************************/
 {
@@ -178,5 +172,3 @@ void sqlany_finalize_interface( SQLAnywhereInterface * api )
     unloadLibrary( api->dll_handle );
     memset( api, 0, sizeof(*api));
 }
-
-
