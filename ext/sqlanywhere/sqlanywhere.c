@@ -29,7 +29,7 @@
 
 #define IS_SACAPI_V2(api) ((api.sqlany_init_ex) != NULL)
 
-const char* VERSION = "0.2.1";
+const char* VERSION = "0.2.2";
 
 typedef struct imp_drh_st {
   SQLAnywhereInterface  api;
