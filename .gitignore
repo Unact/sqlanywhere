@@ -2,8 +2,7 @@ ext/*.o
 ext/*.old
 ext/*.so
 ext/Makefile
-lib/*
+lib/sqlanywhere/*[.so, .bundle, .dll]
 *.gem
 .DS_Store
 /tmp
-*.bundle
