@@ -7,7 +7,7 @@ Gem::Specification.new do |gem|
     SQL Anywhere  Driver for Ruby
   EOF
   gem.version = '0.2.2'
-  gem.required_ruby_version = '>= 1.8.6'
+  gem.required_ruby_version = '>= 2.2'
   gem.files = Dir["lib/**/*", "ext/**/*", "LICENSE", "Rakefile", "README.md"]
   gem.test_file  = 'test/sqlanywhere_test.rb'
 
